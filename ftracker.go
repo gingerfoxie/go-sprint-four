@@ -101,7 +101,7 @@ const (
 func WalkingSpentCalories(action int, duration, weight, height float64) float64 {
 	//return (walkingCaloriesWeightMultiplier*weight + (math.Pow(meanSpeed(action, duration), 2)/height)*walkingSpeedHeightMultiplier*weight) * duration * minInH
 	speedMeterSec := distance(action) * 1000 / (duration * 60 * 60)
-	return ((walkingCaloriesWeightMultiplier*weight + (math.Pow(speedMeterSec)/height)*walkingSpeedHeightMultiplier*weight) * duration * minInH)
+	return ((walkingCaloriesWeightMultiplier*weight + (math.Pow(speedMeterSec, 2)/height)*walkingSpeedHeightMultiplier*weight) * duration * minInH)
 
 }
 
